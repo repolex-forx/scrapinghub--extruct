@@ -1,0 +1,11 @@
+{
+  "org": "scrapinghub",
+  "repo": "extruct",
+  "versions": [
+    {
+      "commit": "d24f5414fd32c874989492ebd04cb1deb6d7d04e",
+      "tag": "",
+      "parsed_at": "2026-10-19T13:02:15.539039+00:00"
+    }
+  ]
+}

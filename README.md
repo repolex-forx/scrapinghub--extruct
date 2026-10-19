@@ -1,1 +1,177 @@
-Initializing
+# Repolex Knowledge Graph of scrapinghub/extruct
+
+RDF knowledge graph data for [scrapinghub/extruct](https://github.com/scrapinghub/extruct), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download scrapinghub/extruct
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── d24f5414fd32c874989492ebd04cb1deb6d7d04e
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── d24f5414fd32c874989492ebd04cb1deb6d7d04e
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 01595119775f16f23ce1cb2e8ea32da499ae0428.nq.gz
+│   ├── 03ae6c5dced812010e6d05efa8480f225d7ab5c8.nq.gz
+│   ├── 068b95e820ae7b2af7ef3729d97e449c65e9d949.nq.gz
+│   ├── 068df67adab9c94472cb7c3c86abd2186bfa65ae.nq.gz
+│   ├── 0a7dbe6abff9c85ae7a5118200125a9cad3b9b08.nq.gz
+│   ├── 18399a2f387ee3d87ef06cfeac98a3d05955f0e9.nq.gz
+│   ├── 1eb503f61500eb3cc1d82acdf710c7cdffb66794.nq.gz
+│   ├── 1ffcbd5875f705c0c6be0a0998d933a44e6b9278.nq.gz
+│   ├── 207b80ba827043097721886af183a4061b65cb34.nq.gz
+│   ├── 21792d4fe0d5893c13a915077a6d6adc7be51e42.nq.gz
+│   ├── 2390d8c809eea1d6587357cdad25ed4af134db32.nq.gz
+│   ├── 2426a3324210091e9af360740c01d430c43082d4.nq.gz
+│   ├── 2f31e1563fedb248e69e132592fa809dff776599.nq.gz
+│   ├── 318b06b437c118630c15886c0ddf1b59926ed8da.nq.gz
+│   ├── 32ac036fef6ccdbefae40de64a15ec3b1307e073.nq.gz
+│   ├── 32c886c32080a56673aaa03118b421456960354c.nq.gz
+│   ├── 385b4b6ac59d06b8462b397e9d3b3a45e622f662.nq.gz
+│   ├── 387622faab27aba0b0813a60e764573ed4af6b13.nq.gz
+│   ├── 38cf5eca32003c5fd045dd0176e1e52fa7919ab1.nq.gz
+│   ├── 38fdad46c73638092aa339dd8c3a4e0a4100d6f7.nq.gz
+│   ├── 39e6b3423d76df623357963efe7f7c245403248b.nq.gz
+│   ├── 3f185ba4488ae2234a0216f0e82f505385f78986.nq.gz
+│   ├── 403cb79a59cc76a737139637a487456a94585344.nq.gz
+│   ├── 462eabf2a3eadb2b47fd9d78eed2dbd2c99fa243.nq.gz
+│   ├── 46a514690fc24a6b3d1121a08ebc74450e0f4704.nq.gz
+│   ├── 51da7f4995e8589afa48bb5a520aeb0c2a8057db.nq.gz
+│   ├── 58dc98946a4fbfed1f94325eec836cfcf688f66c.nq.gz
+│   ├── 5eea845cc0a61246ee21fd671808dfeb1198151f.nq.gz
+│   ├── 60ad482744a94a4bacbe4918c446ab4fa7d6a704.nq.gz
+│   ├── 61dae29dac14ae9ffaca8bbd3d617d60bb47790a.nq.gz
+│   ├── 66333910a4beec729370ff97e5044b345383eba4.nq.gz
+│   ├── 696aa24473fdc8aebf3fc2c7b0c704f87b5ec7c3.nq.gz
+│   ├── 6dc9810f19cb22b0e7864e55d86522656d8bc666.nq.gz
+│   ├── 708407bd7ef4eb566fb9234a8f46ce83865a970c.nq.gz
+│   ├── 7134bb09f3fbb93d26268911fd6ff8986f6d114d.nq.gz
+│   ├── 7220687f7afe38fc11e179bd8669008bb7d4516e.nq.gz
+│   ├── 737fbfaae515cd1f90c361857a7bca399aface65.nq.gz
+│   ├── 7534a5d727cf549df6b7955d129281445cf869c4.nq.gz
+│   ├── 7559912467db83993fb7390dabb942c3c3681252.nq.gz
+│   ├── 7b3cb19d4753575416724d3e85f634ae1d9c4406.nq.gz
+│   ├── 7dbb9e5e2881e6009a68e1824693b12dd52e9492.nq.gz
+│   ├── 81d9284995e6ea06cc0b7e4cf029085d0574d969.nq.gz
+│   ├── 832b0048b5f367f3fcbdae66c65691065ad6ff6e.nq.gz
+│   ├── 888859b65ab92888402c90720c32d14a2fc5436b.nq.gz
+│   ├── 8b49c1c675128066571eb61afa4a8e9fd9fb1100.nq.gz
+│   ├── 8bf9d479eacea7e79e35e64b72ccc9b25cd2beb8.nq.gz
+│   ├── 8c04f381bb62b91a819b31fe35e177af90722bd5.nq.gz
+│   ├── 8f064ede68d3ed1579e9cd89b09249901f499de0.nq.gz
+│   ├── 91361a86e510c2e2fe75839bb57ced12b7083d75.nq.gz
+│   ├── 92e1b91d12f0c15f481474064001577389fa8e0f.nq.gz
+│   ├── 95d7ed71aa3555056ded5b1297d82dca179058fe.nq.gz
+│   ├── 960fabbaca458d3aecb0fdc4226985df3ad80219.nq.gz
+│   ├── 9694ff03f526cabf9aab2b26535a1d8d87d4f925.nq.gz
+│   ├── 9b91713e077ab4425cf7fada811404d7f263f4a9.nq.gz
+│   ├── 9be41631eafe49706ed567cb33d10775f1a266ed.nq.gz
+│   ├── 9c145abe49b0c4cb0794a7d365e830263f45beeb.nq.gz
+│   ├── 9d992fb1223ee48e787beeeeed018f79cbd63246.nq.gz
+│   ├── 9e040fff91694106e06ccec28cc7a5f7081f55a5.nq.gz
+│   ├── 9fdc87d78cf21b271dec0772dc65f1a3d443bcff.nq.gz
+│   ├── a38a0320187abb5e18889a3db303ccda951b023c.nq.gz
+│   ├── a3d24b6b4bef847afd7e57adcb15e272a648edb9.nq.gz
+│   ├── a4e0d7c9a5f4b6a8aea7539f8473b553f020c80c.nq.gz
+│   ├── a92282f3e37b47e88afa29d33ff819f157e69216.nq.gz
+│   ├── ac063a565fbb1c576db51610f3ae9ae708ff73c8.nq.gz
+│   ├── b06b8a86e1d79a7d0faaaa7cd52cfe1329b45674.nq.gz
+│   ├── b2908c15d0215739a5edefe29cbb4ae2edba0df3.nq.gz
+│   ├── b3d81a7e49ff3dcae67c080fccbaac424db01b49.nq.gz
+│   ├── b7087de0619b7790b7fd3adcb69b7f0a23647cb3.nq.gz
+│   ├── b9f8c12f49e1c02c2c65769207036f7cbc400b52.nq.gz
+│   ├── b9fb3f3e8caa50cb46d61e0d193bad2624b598c9.nq.gz
+│   ├── bc4b01014b2ec2d6a5479f4fc1c4988671f10239.nq.gz
+│   ├── bd967365b8c677beba335e98be5e3e70b2aa8c9a.nq.gz
+│   ├── beca2ee2a778e674c3b56f06947344b8f755694b.nq.gz
+│   ├── bf9d5336c95820bc6045571ca6fea166fb407d51.nq.gz
+│   ├── cdff7435af24e8335938e0f5194465d27c2cfa71.nq.gz
+│   ├── cf2240ac6a746fccd91bd5d733d482b5b27b611b.nq.gz
+│   ├── cf5f0fb3aed272ca397110b900f418dd862df4ad.nq.gz
+│   ├── cf93030da9ab2ade3768812fd6513f7749b76d31.nq.gz
+│   ├── d2319c3f1385f16b376b82df531a67a0a24b1e8a.nq.gz
+│   ├── d49d61de336f27501eefd3d7dae24e8b9c9cff09.nq.gz
+│   ├── d4df3877e94b083b4f53431b165ae180a7416bbc.nq.gz
+│   ├── d84bd5959615ab1994e4d1500bfeeac2381dd818.nq.gz
+│   ├── dc9a914e77fed649716381789a45449e6176e7c8.nq.gz
+│   ├── dd9846dccbb24e297b85245712568b5a9b36bc95.nq.gz
+│   ├── e1dc17f1c101bbf64fe28ea1f9a7b6e1629a92d7.nq.gz
+│   ├── e5c849e9070feab3c64f8ec85b4108a14ebad6d9.nq.gz
+│   ├── eaf005343996b31fea4eb7f256ecc96b691881ea.nq.gz
+│   ├── eda2d26ca8b315cb080317462308dea8ea8f3407.nq.gz
+│   ├── f10eb819b95a7c2c303f6840fecc2729215d52cf.nq.gz
+│   ├── f205bc40ed37a9eeb5f30a1d6ed5420c04696689.nq.gz
+│   ├── f7043d8cd2aea090e647c3b2c6adf53030a8b082.nq.gz
+│   ├── f7ef6fc30b8ff502bbae1a9d0669ebb6d6910fb9.nq.gz
+│   ├── f8f12abb343588b114353fe6c1f284dbf5f76b23.nq.gz
+│   ├── f9f462b8ef047f18a96d530d26f8d58f91078846.nq.gz
+│   ├── fa6e44bb2e0e2f4687b72b018cf6a42d90d5062a.nq.gz
+│   ├── fa778bb03b5dd224dcd03e321d195765e2ed52c3.nq.gz
+│   ├── fda160c03ac3fa83fca23cf60de10531b7a08154.nq.gz
+│   └── feaf213b09b62a513c49103e52c5dfc63dbeaa6a.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── d24f5414fd32c874989492ebd04cb1deb6d7d04e.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 106 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[scrapinghub/extruct](https://github.com/scrapinghub/extruct)
+
+---
+*Parsed on 2026-10-19 by [repolex](https://repolex.ai)*
